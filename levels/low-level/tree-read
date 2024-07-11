@@ -1,0 +1,51 @@
+[descripción]
+
+¡Tan pronto como tenga algunos objetos de árbol, siempre podrá leerlos y establecer el índice exactamente según su contenido! Como era de esperar, el comando se llama
+
+    git lectura-árbol <árbol>
+
+Para <árbol>, puede proporcionar el hash de cualquier objeto de árbol; puede hacer clic derecho en uno para insertar su hash en la terminal.
+
+¡Intenta leer algunos de los árboles de este repositorio en el índice!
+
+[configuración]
+
+EMPTY_TREE=$(git escribir-árbol)
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+git agregar.
+árbol de escritura de git
+
+habitación *
+echo "archivo A" > archivoA
+echo "archivo B" > archivoB
+echo "archivo C" > archivoC
+git agregar.
+TRIPLE_TREE=$(git escribir-árbol)
+
+git árbol de lectura "$EMPTY_TREE"
+
+[objetivo de configuración]
+
+EMPTY_TREE=$(git escribir-árbol)
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+git agregar.
+árbol de escritura de git
+
+habitación *
+echo "archivo A" > archivoA
+echo "archivo B" > archivoB
+echo "archivo C" > archivoC
+git agregar.
+TRIPLE_TREE=$(git escribir-árbol)
+
+git árbol de lectura "$EMPTY_TREE"
+
+git árbol de lectura "$TRIPLE_TREE"
+
+[ganar]
+
+prueba "$(git ls-files | wc -l)" -gt 0

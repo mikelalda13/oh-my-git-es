@@ -1,0 +1,27 @@
+título = La línea de comando
+tarjetas = 
+
+[descripción]
+
+¡Estos naipes están diseñados para ser fáciles de usar y recordar! ¡Te sugerimos que los sigas si no tienes mucha experiencia con Git!
+
+[cli]
+
+Pero hay otra forma de interactuar con Git:
+
+Intente escribir `git init` en la terminal negra a continuación y presione la tecla Intro.
+
+[configuración]
+
+rm-rf.git
+
+[ganar]
+
+# ¡Inicializa la máquina del tiempo!
+prueba -d .git
+
+[felicitaciones]
+
+¡Fresco! ¡En lugar de usar las cartas, también puedes hacer todo a través de la línea de comando!
+
+¡La línea de comando es bastante poderosa! A menudo, puedes usarlo para resolver tareas más rápido en comparación con el uso de una interfaz gráfica.

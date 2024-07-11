@@ -1,0 +1,35 @@
+title = Obteniendo desde controles remotos
+tarjetas = finalizar compra buscar compromiso-auto
+
+[descripción]
+
+¡Aquí ya tienes dos mandos configurados! Puede enumerarlos usando `git remoto`.
+
+Obtenga de ambos y mire las sugerencias.
+
+Luego, haga un nuevo compromiso además del original que introduzca un compromiso.
+
+[configuración]
+
+echo "El cobertizo para bicicletas debería ser ???" > propuesta
+git agregar.
+git commit -m "¿Qué piensas?"
+
+[configurar amigo1]
+
+git tira el tuyo principal
+echo "El cobertizo para bicicletas debería ser verde" > propuesta
+git commit -soy "verde"
+
+[configurar amigo2]
+
+git tira el tuyo principal
+echo "El cobertizo para bicicletas debería ser azul" > propuesta
+git commit -am "Azul"
+
+[ganar]
+
+# Tu propuesta es aceptable para amigo1.
+git show principal: propuesta | git grep verde
+# Tu propuesta es aceptable para amigo2.
+git show principal: propuesta | git grep azul

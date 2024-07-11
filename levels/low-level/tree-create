@@ -1,0 +1,35 @@
+[descripción]
+
+Después de crear cuidadosamente el índice que queremos, sería bueno guardar una instantánea permanente del mismo, ¿verdad?
+
+Para eso está el segundo tipo de objetos: ¡árboles! Puede convertir el índice en un árbol usando
+
+    árbol de escritura de git
+
+¡Intentalo! :)
+
+[felicitaciones]
+
+¡Lindo!
+
+¿Puedes hacer un árbol diferente? Modifique el índice y luego llame a `git write-tree` nuevamente.
+
+[configuración]
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+eco "archivo 3" > archivo3
+git agregar.
+
+[objetivo de configuración]
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+eco "archivo 3" > archivo3
+git agregar.
+
+árbol de escritura de git
+
+[ganar]
+
+git cat-file -p 21a638f28022064c1f1df20844278b494d197979

@@ -1,0 +1,42 @@
+título = Hacer copias de seguridad
+tarjetas =
+
+[descripción]
+
+Esta vez, estás haciendo muchas copias de seguridad; ¡puedes verlas haciendo clic en ellas!
+
+[felicitaciones]
+
+Bien, este tipo de trabajos.
+
+Pero le preocupa un poco terminar con cientos de copias de este formulario y será difícil realizar un seguimiento de todas ellas.
+
+Y especialmente cuando se trabaja con otras personas, enviar copias de un lado a otro no parece lo ideal.
+
+¡No puedes esperar a probar estas máquinas del tiempo!
+
+[configuración]
+
+rm-rf.git
+
+echo "~ Por qué quiero aprender Git ~
+
+(Aún necesito escribir esto.)" >> form.txt
+
+
+echo "~ Por qué quiero aprender Git ~
+
+- Para poder deshacer errores" >> form2.txt
+
+
+echo "~ Por qué quiero aprender Git ~
+
+- Para poder deshacer errores
+- Para realizar un seguimiento de mis proyectos a lo largo del tiempo" >> form2_final.txt
+
+cp form2_final.txt form2_really_final.txt
+
+[ganar]
+
+# ¡Agrega otra línea a form2_really_final.txt!
+prueba "$(cat form2_really_final.txt | wc -l )" -ge 5

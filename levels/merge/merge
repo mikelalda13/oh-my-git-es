@@ -1,0 +1,82 @@
+título = Fusionar líneas de tiempo
+tarjetas = pago confirmación-fusión automática
+
+[descripción]
+
+Aquí tienes un truco para que puedas dormir un poco más: simplemente haz todas tus actividades matutinas en universos paralelos y, al final, ¡fúndelas!
+
+[configuración]
+
+echo "No tienes baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+
+git agregar.
+git commit -m "El comienzo"
+
+echo "Tienes una baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Compras una baguette"
+
+echo "Te comiste una baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Te comes la baguette"
+
+git pago CABEZA~2
+echo "No tienes baguette.
+
+Tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Compras un poco de café"
+
+echo "No tienes baguette.
+
+Bebiste café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Tú bebes el café"
+
+git pago CABEZA~2
+echo "No tienes baguette.
+
+No tienes café.
+
+Tienes un donut." > tú
+git agregar.
+git commit -m "Compras una dona"
+
+echo "No tienes baguette.
+
+No tienes café.
+
+Te comiste un donut." > tú
+git agregar.
+git commit -m "Te comes el donut"
+
+git checkout --separar
+rama git -D principal
+
+[ganar]
+
+# Crea una situación en la que hayas consumido una barra de pan, un café y *y* un donut.
+{ git show HEAD:tú | grep "Comiste.*baguette"; } && { git show HEAD:tú | grep "Bebiste.*café"; } && { git show HEAD:tú | grep "Comiste.*dona"; }
+
+# Estar en un compromiso de fusión.
+prueba "$(git log --pretty=%P -n 1 HEAD | wc -w)" -ge 2
+
+[felicitaciones]
+
+Me pregunto si estás más relajado cuando *duermes* en líneas de tiempo paralelas...

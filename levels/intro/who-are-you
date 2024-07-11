@@ -1,0 +1,38 @@
+title = ¡Bienvenido a la escuela de viajes en el tiempo!
+tarjetas = nombre de configuración confirmación-pago automático
+
+[descripción]
+
+Todavía estás bastante confundido por todo lo que está pasando. ¡Al día siguiente, decides inscribirte en la escuela de viajes en el tiempo!
+
+Tu profesor de viajes en el tiempo te da la bienvenida: "¡Hola! ¿Quieres decirnos tu nombre?"
+
+[configuración]
+
+git config --global usuario.nombre "Tú"
+
+echo "~ ¿Por qué quieres aprender a usar máquinas del tiempo? ~
+
+[ ] Para asegurarme de que mi gato no se coma mi tarea.
+[] Así que no tengo que guardar copias de todos mis ensayos.
+[] Colaborar con otros estudiantes de viajes en el tiempo.
+[ ] Otro, por favor especifique:" > formulario
+
+[comportamiento]
+
+prueba "$(git config user.name)" != "Tú" && forma de gato | grep -v Firma && eco "
+Firma: $(git config user.name)" >> formulario
+
+[ganar]
+
+# Presentarte.
+prueba "$(git config user.name)" != "Tú"
+
+# ¡Rellene el formulario de inscripción y confíelo!
+git show principal:formulario | grep '\[[xX]\]'
+
+[felicitaciones]
+
+"¡Estamos muy contentos de tenerte!
+
+¡Git puede ayudarte a solucionar problemas del pasado! ¡Te permite colaborar con otros estudiantes de viajes en el tiempo! ¡Es realmente poderoso y muy popular! ¡Te veré mañana en tu primera lección!"

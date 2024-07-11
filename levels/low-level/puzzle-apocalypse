@@ -1,0 +1,41 @@
+[descripción]
+
+¡Elimine todos los objetos en este repositorio usando solo comandos git!
+
+Comandos útiles:
+
+    git podar
+    git reflog expira
+
+[configuración]
+
+eco foo > foo
+BLOB=$(git hash-objeto -w foo)
+barra de eco > barra
+git agregar.
+git commit -m "Compromiso inicial"
+eco parloteo >> barra
+git commit -a -m "Segundo compromiso"
+git update-ref refs/CABEZA importante
+git update-ref refs/interesante "$BLOB"
+
+[objetivo de configuración]
+
+eco foo > foo
+BLOB=$(git hash-objeto -w foo)
+barra de eco > barra
+git agregar.
+git commit -m "Compromiso inicial"
+eco parloteo >> barra
+git commit -a -m "Segundo compromiso"
+git update-ref refs/CABEZA importante
+git update-ref refs/interesante "$BLOB"
+
+ÁRBOL=$(git mktree)
+git árbol de lectura $ÁRBOL
+rm -rf .git/refs/*
+rm -rf .git/objetos/*
+
+[ganar]
+
+prueba "$(git cat-file --batch-check --batch-all-objects | wc -l)" -eq 0

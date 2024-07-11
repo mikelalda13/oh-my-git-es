@@ -1,0 +1,26 @@
+título = Sandbox con tres confirmaciones
+tarjetas = pagar agregar restablecer-archivo pagar-archivo confirmar fusionar rebase
+
+[configuración]
+
+echo "Te despiertas". > tu
+git agregar.
+git commit -m "El comienzo"
+
+echo "Bebes café". >> tu
+git commit -am "Lo primero es lo primero"
+
+echo "Escuchas un golpe en la puerta". >> tu
+git commit -am "¿Quién está ahí?"
+
+rama git not_main
+
+[descripción]
+
+Aquí tienes una caja de arena en la que puedes jugar.
+
+Podrás utilizar tanto las cartas, como el terminal. ¡Esta es una verdadera terminal Git! Cosas divertidas para probar:
+
+- ¡Haz un compromiso que combine tres líneas de tiempo a la vez!
+- ¡Crea y elimina algunas etiquetas!
+- ¡Crea una línea de tiempo que sea completamente independiente del resto!

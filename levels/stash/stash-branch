@@ -1,0 +1,48 @@
+título = Rama del alijo
+tarjetas = pago confirmar-fusión automática restablecer-hard
+
+[descripción]
+
+Si desea conservar los cambios pero no pertenecen a la rama principal, puede hacerlo fácilmente
+cree una nueva rama a partir de sus cambios guardados. Solo usa
+    git stash rama <nombre de rama> <alijo>
+Si solo desea utilizar la última entrada de alijo, puede dejar la opción <stash> vacía.
+
+¡Crea una nueva rama a partir de los cambios escondidos!
+
+---
+tipp1
+---
+tipp2
+---
+tipp3
+
+[configuración]
+
+echo "Tarta de manzana:" > receta
+
+git agregar.
+git commit -m "creando una receta"
+
+echo "- 4 manzanas" >> receta
+
+git agregar.
+git commit -m "Agregar ingredientes"
+
+echo "- 500g Harina" >> receta
+git alijo empujar
+
+git pago principal
+
+[ganar]
+
+# ¿Creaste una nueva rama a partir de los cambios ocultos?
+prueba "$(git rama --list| wc -l)" -ge 2
+
+[comportamiento]
+
+
+
+[felicitaciones]
+
+¡Los cambios ocultos están en una nueva rama! :)

@@ -1,0 +1,38 @@
+[descripción]
+
+En esencia, Git es muy simple. Almacena "objetos", que son básicamente archivos identificados por un "identificador" (abreviado: ID).
+
+Hay cuatro tipos de objetos: blobs, árboles, confirmaciones y etiquetas. El tipo más simple es un "blob", que es simplemente un fragmento de texto.
+
+¡Creemos algunas manchas! Para hacer eso, cree un archivo con el contenido deseado y luego use
+
+    git hash-object -w <archivo>
+
+La bandera -w significa "escribir" y le dice a Git que realmente escriba el nuevo blob en el disco.
+
+¡Crea tres nuevos blobs!
+
+[felicitaciones]
+
+Consejo: También puedes usar un comando como este para crear un blob en una sola línea:
+
+    echo "contenido increíble" | git hash-objeto -w --stdin
+
+¿Ya notaste que puedes arrastrar y soltar todos los objetos? :)
+
+[configuración]
+
+[objetivo de configuración]
+
+eco "Hola" > archivo1
+eco "Ho" > archivo2
+eco "Hu" > archivo3
+git hash-objeto -w archivo1
+git hash-objeto -w archivo2
+git hash-objeto -w archivo3
+
+[ganar]
+
+BLOB_COUNT=$(git cat-file --batch-check='%(nombre de objeto) %(tipo de objeto)' --batch-all-objects | grep blob | wc -l)
+
+prueba "$BLOB_COUNT" -gt 2

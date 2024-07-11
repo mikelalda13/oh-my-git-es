@@ -1,0 +1,54 @@
+título = Empujé algo roto
+tarjetas = revertir el empujón
+
+[descripción]
+
+Estábamos hablando de cómo deshacer una confirmación y solucionarla. Esto sólo ayuda cuando aún no lo has activado a un control remoto. Cuando eso haya sucedido y desee deshacer completamente los efectos de la confirmación, su mejor opción es `git revert`
+
+[configuración]
+
+eco "esto está bien
+
+?
+
+?
+
+?" > texto
+git agregar.
+git commit -m bien
+eco "esto está bien
+
+esto también está bien
+
+?
+
+?" > texto
+git commit -estoy "también bien"
+eco "esto está bien
+
+esto también está bien
+
+esto es muy malo
+
+?" > texto
+git commit -soy "muy malo"
+eco "esto está bien
+
+esto también está bien
+
+esto es muy malo
+
+esto está bien otra vez" > texto
+git commit -estoy "bien otra vez"
+
+equipo principal de git push
+git rama -u equipo/principal principal
+
+[equipo de preparación]
+
+[equipo ganador]
+
+# La rama principal del equipo ya no contiene lo malo.
+! { git show principal:texto | grep -q "muy malo"; }
+# Y el historial no ha sido modificado.
+git show principal^:texto | grep -q "muy malo"

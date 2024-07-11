@@ -1,0 +1,20 @@
+título = Clonación de un repositorio
+cards = clonar compromiso-auto pull push
+
+[descripción]
+
+Obtenga el repositorio de su amigo usando clon, cambie algo, retírelo.
+
+[configuración]
+
+rm-rf.git
+
+[amigo de configuración]
+
+eco hola > archivo
+git agregar.
+git commit -m "Compromiso inicial"
+
+[gana amigo]
+
+prueba "$(git show main:file)" != hola

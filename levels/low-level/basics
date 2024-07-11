@@ -1,0 +1,26 @@
+[descripción]
+
+Para este prototipo, asumimos que tienes algo de experiencia con la línea de comando. Aquí hay algunos comandos que serán útiles:
+
+- es
+- contenido de eco> archivo
+- archivo de gato
+- directorio mkdir
+
+¡Encuentra el acertijo en tu directorio actual y coloca la respuesta en el archivo "respuesta"!
+
+[felicitaciones]
+
+¡Om nom nom!
+
+Por razones técnicas, todavía no puedes usar `cd` en este prototipo. Pero de todos modos no habrá mucha interacción con el sistema de archivos. :)
+
+[configuración]
+
+acertijo mkdir
+echo "ppl p" > acertijo/consonantes
+echo "ae ie" > acertijo/vocales
+
+[ganar]
+
+respuesta del gato | grep -i "manzana \\?tarta"

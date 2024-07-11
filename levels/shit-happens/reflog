@@ -1,0 +1,26 @@
+title = Vuelve a donde estabas antes
+tarjetas = finalizar compra reflog
+
+[descripción]
+
+Supongamos que estaba mirando algo en el pasado y luego volvió a la rama principal.
+
+Pero luego, te distrajiste mucho y, después de la pausa para el almuerzo, no puedes recordar en qué compromiso del pasado estabas antes. ¿Cómo puedes saberlo?
+
+Hay un comando conveniente que le muestra todos los lugares a los que su HEAD apuntó en el pasado:
+
+    git reflog
+
+[configuración]
+
+para i en {1..10}; hacer
+    git confirmar --allow-empty -m $i
+    rama git $i
+hecho
+git pago 3
+git pago principal
+
+[ganar]
+
+# ¡Descubre dónde has estado antes y regresa allí!
+prueba "$(git rev-parse HEAD)" = "$(git rev-parse 3)"

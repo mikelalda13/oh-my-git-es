@@ -1,0 +1,22 @@
+title = Restaurar un archivo eliminado
+tarjetas = pagar
+
+[descripción]
+
+¡Vaya! Eliminaste el archivo de "ensayo", en el que trabajaste toda la noche.
+
+¡Afortunadamente, Git está aquí para ayudar! ¡Puedes usar `git checkout` para restaurar el archivo!
+
+[configuración]
+
+eco importante > ensayo
+git agregar.
+git commit -m "Compromiso inicial"
+echo "contenido importante" > ensayo
+git commit -am "Mejorar ensayo"
+ensayo rm
+
+[ganar]
+
+# Restaurar el ensayo para que contenga "contenido importante"
+test "$(cat essay)" = "contenido importante"

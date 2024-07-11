@@ -1,0 +1,33 @@
+título = Tu primer compromiso
+tarjetas = compromiso-automático
+
+[descripción]
+
+¡Puedes usar tu máquina del tiempo para tomar instantáneas de los objetos que te rodean! ¡Aquí, practiquemos esto!
+
+(Tu maestra vierte un poco de agua en un vaso).
+
+[cli]
+
+Nuevamente, en lugar de usar la tarjeta, ¡también puedes escribir los comandos que están impresos en ella en la terminal negra a continuación!
+
+¡Esto es totalmente opcional! Pero esta será una habilidad súper útil en el mundo real, ¡y te dará una brillante insignia dorada! :)
+
+[configuración]
+
+echo "El vaso está lleno de agua". > vidrio
+
+[ganar]
+
+# Hacer una instantánea del vaso (un "compromiso")
+git rev-parse CABEZA
+
+# ¡Cambia el contenido del vaso!
+! test "$(cat glass)" = "El vaso está lleno de agua."
+
+# ¡Y haz un segundo compromiso!
+git rev-parse CABEZA^ &&! test "$(git show main:glass)" = "El vaso está lleno de agua".
+
+[felicitaciones]
+
+¡Lindo! Puedes intentar realizar algunas confirmaciones adicionales. Cuando te sientas cómodo, haz clic en "Siguiente nivel".

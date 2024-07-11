@@ -1,0 +1,30 @@
+[descripción]
+
+¡Un compromiso puede tener varios padres! Puede especificar la opción -p varias veces, así:
+
+    git commit-tree <árbol> -m "Descripción" -p <padre1> -p <padre2>
+
+Construya una forma de rombo a partir de confirmaciones, donde dos confirmaciones apunten al mismo padre y luego una cuarta confirmación apunte a ambas.
+
+[configuración]
+
+[objetivo de configuración]
+
+ÁRBOL=$(git escribir-árbol)
+SUR=$(git commit-tree $TREE -m "Sur")
+ESTE=$(git commit-tree $ÁRBOL -m "Este" -p $SUR)
+OESTE=$(git commit-tree $ÁRBOL -m "Oeste" -p $SUR)
+NORTE=$(git commit-tree $ÁRBOL -m "Norte" -p $ESTE -p $OESTE)
+
+[ganar]
+
+COMMITS=$(git cat-file --batch-check='%(nombre de objeto) %(tipo de objeto)' --batch-all-objects | grep commit | cut -f1 -d" ")
+
+para COMMITIR en $COMMITS; hacer
+    # Los padres de mi primer padre tienen que ser los mismos que los de mi segundo padre.
+    if [ "$(git rev-parse --verify -q $COMMIT^1^)" = "$(git rev-parse --verify -q $COMMIT^2^)" ]; entonces
+        regresar 0
+    fi
+hecho
+
+regresar 1

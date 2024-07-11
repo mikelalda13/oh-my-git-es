@@ -1,0 +1,43 @@
+título = Moviéndose a través del tiempo
+tarjetas = pago confirmar-auto
+
+[descripción]
+
+Los cuadros amarillos son puntos congelados en el tiempo, ¡los llamamos "compromisos"! ¡Puedes viajar entre ellos usando la tarjeta "checkout"! (¡Intentalo!)
+
+¿Puedes descubrir qué pasó aquí? Luego, durante la última confirmación, edite los archivos para solucionar el problema y realice una nueva confirmación.
+
+[cli]
+
+Para verificar una confirmación específica, escriba `git checkout`, luego un espacio y luego haga clic derecho en la confirmación que desee.
+
+¡Esto insertará el identificador único de la confirmación!
+
+[configuración]
+
+echo "Esta alcancía pertenece a la hermana mayor.
+Contiene 10 monedas." > alcancía
+git agregar.
+git commit -m "El comienzo"
+
+echo "Una joven de cabello castaño y rizado". > hermanita_pequeña
+git agregar.
+git commit -m "Entra la hermana pequeña"
+
+echo "Tiene 10 monedas." >> hermanita_pequeña
+echo "Esta alcancía pertenece a la hermana mayor.
+Está vacío." > alcancía
+git agregar.
+git commit -m "La hermana pequeña hace algo"
+
+git checkout CABEZA^^
+rama git -df principal
+
+[ganar]
+
+# Restaurar la paz fraternal.
+{ git show HEAD:piggy_bank | grep "10 monedas"; } && { git show HEAD:hermana_pequeña | grep -v "10 monedas"; } && { git rev-parse HEAD^^^; }
+
+[felicitaciones]
+
+¡Maravilloso! Ahora que te estás familiarizando con la máquina del tiempo, veamos algunas situaciones más complicadas...

@@ -1,0 +1,36 @@
+título = Compañeros de cuarto inesperados
+tarjetas = eliminar archivo
+
+[descripción]
+
+El primer día en Time Travel School llega a su fin y recibes la llave de tu habitación.
+Lleno de emoción abres la puerta sólo para encontrar... ¡telas de araña! ¡Telaras de araña por todas partes!
+
+¡Elimina todas las telarañas que puedas encontrar con la tarjeta de eliminación!
+
+[cli]
+
+En la línea de comando, puedes eliminar fácilmente todos los archivos que terminan en -web usando este comando:
+
+    habitación *web
+
+[configuración]
+
+echo Una pequeña telaraña está al lado de tu ventana. > pequeña_web
+echo Una gran telaraña cuelga encima de tu cama. > gran_web
+eco Una cama acogedora. > cama
+echo Una telaraña extra gruesa está justo al lado de tu puerta. > red_gruesa
+
+[ganar]
+
+# Retire todas las telas de araña.
+! ls | grep web_gruesa &&
+! ls | grep big_web &&
+! ls | grep tiny_web
+
+# ¡Pero asegúrate de quedarte en tu cama!
+ls | cama grep
+
+[felicitaciones]
+
+¡Tu habitación ahora se ve muy ordenada y acogedora! ¡Es hora de desempacar tus cosas!

@@ -1,0 +1,65 @@
+title = Realizar confirmaciones paralelas
+tarjetas = pago confirmar-auto
+
+[descripción]
+
+¿Sabías que crear líneas de tiempo paralelas es perfectamente legal y seguro? ¡Es cierto!
+
+¿Puedes descubrir cuándo salieron mal las cosas en este zoológico? Luego, regresa al último compromiso bueno y crea un universo paralelo donde todos sean felices.
+
+[cli]
+
+El animal azul representa un concepto conocido como "puntero HEAD" en Git: muestra cuál confirmación es la actual.
+
+Aquí hay un truco genial para ir a la confirmación anterior: 
+
+    git checkout CABEZA^
+
+También puedes retroceder dos confirmaciones escribiendo, por ejemplo: 
+
+    git pago CABEZA~2
+
+[configuración]
+
+jaula mkdir
+echo "Parece tener mucha hambre." > jaula/león
+
+echo "Un niño pequeño.
+¡Le encantan los gatos!" > niño
+git agregar.
+git commit -m "El comienzo"
+
+echo "Está sosteniendo una paleta". >> niño
+git commit -am "El niño compra algo"
+
+jaula infantil mv
+git agregar.
+git commit -m "El niño sube a alguna parte"
+
+git rm jaula/niño
+echo "Parece feliz. :)" > jaula/león
+git agregar.
+git commit -m "Oh, no"
+
+echo "Está durmiendo". > jaula/león
+git agregar.
+git commit -m "¡Hora de la siesta!"
+
+git checkout --separar
+git rama -d principal
+
+[ganar]
+
+# Asegúrese de que el niño esté feliz.
+git ls-tree --name-only -r HEAD | niño grep
+
+# Asegúrate de que el león tenga algo de comer.
+git show HEAD:jaula/león | grep -v "mucha hambre"
+
+[felicitaciones]
+
+¡Buen trabajo! Esto parece un resultado *mucho* mejor.
+
+Siéntase libre de agregar más líneas de tiempo paralelas o hacerlas más largas.
+
+Si estás listo, nuestra próxima misión ya te está esperando...

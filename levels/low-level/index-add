@@ -1,0 +1,37 @@
+[descripción]
+
+Los blobs suelen representar el contenido de un archivo. Pero por sí solos no tienen metadatos, ¡ni siquiera un nombre!
+
+Git tiene un concepto muy poderoso para almacenar metadatos relacionados con blobs: ¡el índice! Es una lista que relaciona los blobs con los nombres de archivos y los permisos de acceso.
+
+La opción más conveniente para agregar una entrada al índice es a través de un archivo existente:
+
+    echo "mi contenido" > archivo
+    git update-index --agregar archivo
+
+¡Agregue tres entradas al índice! Para un desafío adicional: ¿puedes agregar un archivo que esté dentro de un directorio, como "directorio/archivo"?
+
+[felicitaciones]
+
+Hay otra forma de agregar una entrada al índice directamente:
+
+    git update-index --add --cacheinfo <modo>,<blobhash>,<nombre>
+
+Los primeros tres números del modo describen el tipo de entrada, "100" es un archivo normal.
+
+Los segundos tres números describen los permisos. Sólo se admiten "644" (no ejecutable) y "755" (ejecutable).
+
+¡Puedes insertar el hash de un objeto en la terminal haciendo clic derecho sobre él! :)
+
+[configuración]
+
+[objetivo de configuración]
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+eco "archivo 3" > archivo3
+git agregar.
+
+[ganar]
+
+prueba "$(git ls-files | wc -l)" -ge 3

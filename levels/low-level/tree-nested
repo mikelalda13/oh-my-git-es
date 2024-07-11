@@ -1,0 +1,38 @@
+[descripción]
+
+¡Los árboles también pueden señalar a otros árboles! De esta manera, pueden describir estructuras de directorios anidados.
+
+Cuando agrega un archivo dentro de un directorio al índice y luego llama a `git write-tree`, creará un árbol anidado para el directorio y le adjuntará el blob.
+
+Para resolver este nivel, construye una pequeña figura de palo, como se muestra a la izquierda: un árbol que apunta a dos manchas, así como un árbol que apunta a dos manchas.
+
+[configuración]
+
+[objetivo de configuración]
+
+echo "Soy el brazo izquierdo" > arm1
+echo "Soy el brazo derecho" > arm2
+cadera mkdir
+echo "Soy la pierna izquierda" > cadera/pierna1
+echo "Soy la pierna derecha" > cadera/pierna2
+git agregar.
+árbol de escritura de git
+
+[ganar]
+
+ÁRBOLES=$(git cat-file --batch-check='%(nombre de objeto) %(tipo de objeto)' --batch-all-objects | árbol grep | cut -f1 -d" ")
+
+para OUTER_TREE en $TREES; hacer
+    NUMBER_OF_BLOB_CHILDREN=$(git cat-file -p $OUTER_TREE | cut -f2 -d" " | grep blob | wc -l)
+    NUMBER_OF_TREE_CHILDREN=$(git cat-file -p $OUTER_TREE | cut -f2 -d" " | grep árbol | wc -l)
+
+    si [ $NUMBER_OF_BLOB_CHILDREN -eq 2 -a $NUMBER_OF_TREE_CHILDREN -eq 1 ]; entonces
+        TREE_CHILD=$(git cat-file -p $OUTER_TREE | cortar -f1 | grep árbol | cortar -d" " -f3)
+        NUMBER_OF_BLOB_CHILDREN_OF_TREE_CHILD=$(git cat-file -p $TREE_CHILD | cut -f2 -d" " | grep blob | wc -l)
+        si [ $NUMBER_OF_BLOB_CHILDREN_OF_TREE_CHILD -eq 2 ]; entonces
+            regresar 0
+        fi
+    fi
+hecho
+
+regresar 1

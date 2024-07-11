@@ -1,0 +1,25 @@
+title = Extraer archivos del índice
+tarjetas = agregar confirmación de archivo de reinicio de archivo de pago
+
+[descripción]
+
+¡Has realizado cambios en tus archivos, pero decides que no quieres conservarlos! ¡Puedes usar `git checkout` para eso!
+
+¿Qué sucede si ya actualizó el índice, como en el archivo c? ¡Primero tienes que restablecer el índice!
+
+[configuración]
+
+eco a > a
+eco b > b
+eco c > c
+git agregar.
+git commit -m "Compromiso inicial"
+eco x > a
+eco x > b
+eco x > c
+git agregar c
+
+[ganar]
+
+# ¡Elimina todos los cambios en tus archivos locales!
+prueba "$(git diff --name-only | wc -l)" -eq 0

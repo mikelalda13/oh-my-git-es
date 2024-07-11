@@ -1,0 +1,26 @@
+title = Cambiar el nombre de un archivo en la próxima confirmación
+tarjetas = agregar archivo de reinicio archivo de pago mv commit
+
+[descripción]
+
+Otras veces, es posible que desees cambiar el nombre de un archivo en la próxima confirmación. Usar
+
+    git mv [archivo] [nuevo nombre]
+
+para eso. El efecto es muy similar a si hubiera creado una copia con un nombre nuevo y hubiera eliminado la versión anterior.
+
+[configuración]
+
+eco a > a
+eco ESPECIAL > b
+eco x > c
+git agregar.
+git commit -m "Compromiso inicial"
+eco x > a
+eco b >> b
+git agregar b
+
+[ganar]
+
+# Realiza una confirmación donde cambias el nombre del archivo b a "x".
+test "$(git ls-tree --name-only main)" = "$(echo -e "a\nc\nx")"

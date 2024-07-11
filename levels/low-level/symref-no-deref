@@ -1,0 +1,46 @@
+[descripción]
+
+Cuando tienes una referencia simbólica (una referencia que apunta a otra referencia) y decides que quieres que vuelva a ser una referencia normal (que apunta a un objeto), ¡te espera un problema! :)
+
+¿Qué sucede cuando intentas apuntar la referencia simbólica directamente al blob usando `git update-ref`?
+
+¡Ups! Resulta que cuando haces referencia a una referencia simbólica, actúa como si hubieras especificado la referencia a la que apunta. Para eliminarlo simbólico, use la opción `--no-deref` directamente después de `update-ref`.
+
+Qué raro, ¿eh?
+
+[felicitaciones]
+
+Vaya, hemos cubierto muchas cosas: ¡Blobs! ¡El índice! ¡Árboles! ¡Se compromete! ¡Árbitros!
+
+¡Ahora sabes casi todo sobre cómo se ven los repositorios de Git por dentro! ¡Creemos que es genial! :)
+
+Todo lo demás son sólo convenciones y comandos de alto nivel que hacen que la interacción con los objetos sea más conveniente.
+
+No hemos cubierto:
+
+- etiquetar objetos (son el cuarto tipo de objeto, un poco como referencias con una descripción y un autor)
+- configuración (le permite especificar repositorios remotos, por ejemplo)
+- trabajar con archivos locales (lo cual es, posiblemente, bastante importante :P)
+
+¡Gracias por jugar! Eres bienvenido a ver los niveles de "rompecabezas" en el menú desplegable, ¡algunos de ellos son más avanzados!
+
+[configuración]
+
+BLOB1=$(echo delicioso | git hash-object -w --stdin)
+BLOB2=$(echo muy | git hash-object -w --stdin)
+git update-ref refs/curly "$BLOB1"
+git simbólico-ref refs/fries refs/curly
+
+[objetivo de configuración]
+
+BLOB1=$(echo delicioso | git hash-object -w --stdin)
+BLOB2=$(echo muy | git hash-object -w --stdin)
+git update-ref refs/curly "$BLOB1"
+git simbólico-ref refs/fries refs/curly
+
+git update-ref --no-deref refs/fries "$BLOB2"
+
+[ganar]
+
+git simbólico-ref refs/fries && retorno 1
+prueba "$(git show-ref -s refs/fries)" = "035e2968dafeea08e46e8fe6743cb8123e8b9aa6"

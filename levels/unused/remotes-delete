@@ -1,0 +1,23 @@
+title = Eliminar y cambiar el nombre de un control remoto
+tarjetas = pagar
+
+[descripción]
+
+¡Aquí ya tienes dos mandos configurados! Puede enumerarlos usando `git remoto`.
+
+[configuración]
+
+git remoto cambiar el nombre amigo frend
+
+[amigo de configuración]
+
+[preparar enemigo]
+
+[ganar]
+
+# Cambie el nombre del control remoto con el error tipográfico (usando `git remoto renombrar [nombre antiguo] [nombre nuevo]`)
+git remoto | gran amigo
+# El control remoto con el error tipográfico desapareció.
+! grep 'frend' <(git remoto)
+# Elimina el control remoto que no deseas conservar (usando `git remoto remove [remoto]`)
+! grep 'enemigo' <(git remoto)

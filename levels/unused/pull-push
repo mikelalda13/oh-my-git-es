@@ -1,0 +1,51 @@
+título = Ayudándose unos a otros
+tarjetas = pago confirmar-reinicio automático-empuje duro
+
+[descripción]
+
+¡Los eventos y líneas de tiempo que ves son siempre solo lo que tu propia máquina del tiempo conoce!
+
+¡Por supuesto, los agentes de tiempo no tienen que trabajar solos! ¡Aquí, tu compañero ya ha preparado una fusión para ti! Puedes utilizar la tarjeta "pull" para transferirla a tu propia máquina del tiempo.
+
+Luego, agrega otro evento encima (¿qué cena Sam?) y "envía" el resultado para transferirlo de nuevo a tu compañero.
+
+Sólo puedes manipular cosas en tu propia máquina del tiempo (la que está en la parte inferior).
+
+[configura el tuyo]
+
+echo "Acabo de despertar. Tiene hambre". > sam
+git agregar.
+git commit -m "El comienzo"
+
+git checkout -b panqueques
+echo "Comí panqueques de arándanos con jarabe de arce para desayunar". > sam
+git agregar.
+git commit -m "¡Panqueques!"
+
+git checkout -b muesli principal
+echo "Comí muesli con avena y fresas para desayunar." > sam
+git agregar.
+git commit -m "¡Muesli!"
+
+git pago principal
+
+git push -u compañero panqueques principales muesli
+
+[compañero de configuración]
+
+git pago principal
+git fusionar panqueques
+git fusionar muesli
+
+echo "Comí panqueques con fresas para desayunar". > sam
+git agregar.
+git commit -m "Hagamos un compromiso con este desayuno" --author="Sidekick <sidekick@example.com>"
+
+[gana compañero]
+
+# Debajo del padre principal, hay un rombo:
+git rev-parse main^^ && test "$(git rev-parse main^^1^)" = "$(git rev-parse main^^2^)"
+
+[felicitaciones]
+
+En realidad, en muchos casos, ¡muchas veces los agentes trabajan juntos para construir juntos un futuro realmente bueno! :)

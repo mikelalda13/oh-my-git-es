@@ -1,0 +1,28 @@
+título = Mirando hacia el pasado
+tarjetas = pagar desde
+
+[descripción]
+
+Has estado trabajando en tu ensayo por un tiempo. Pero no está satisfecho con los cambios que ha realizado recientemente. ¡Quieres volver a la versión llamada "Mejor versión"!
+
+No hay problema, puedes usar la tarjeta `checkout` para restaurar tu ensayo desde una confirmación anterior.
+
+[configuración]
+
+echo "Versión inicial" > ensayo.txt
+git agregar.
+git commit -m "Compromiso inicial"
+
+echo "Versión mejorada" > ensayo.txt
+git commit -a -m "Versión mejorada"
+
+echo "Mejor versión" > ensayo.txt
+git commit -a -m "Mejor versión"
+
+echo "Versión menos buena" > ensayo.txt
+git commit -a -m "Versión menos buena"
+
+[ganar]
+
+# ¡Por razones nostálgicas, restaure la primera copia de seguridad que realizó!
+diff ensayo.txt <(echo "Mejor versión")

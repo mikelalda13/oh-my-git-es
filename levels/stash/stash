@@ -1,0 +1,45 @@
+título = Escondite
+tarjetas = pago confirmar-fusión automática restablecer-hard
+
+[descripción]
+
+Te encontrarás con situaciones en las que estás trabajando en tu proyecto pero necesitas
+deje a un lado sus cambios actuales temporalmente. Para hacerlo, puede utilizar la función de almacenamiento. Usar
+    git alijo empujar 
+para agregar sus cambios actuales a la pila de almacenamiento.
+
+---
+tipp1
+---
+tipp2
+---
+tipp3
+
+[configuración]
+
+echo "Tarta de manzana:" > receta
+
+git agregar.
+git commit -m "creando una receta"
+
+echo "- 4 manzanas" >> receta
+
+git agregar.
+git commit -m "Agregar ingredientes"
+
+echo "- 500g Harina" >> receta
+
+git pago principal
+
+[ganar]
+
+# ¿Escondiste los cambios actuales?
+prueba "$(git stash list | wc -l)" -ge 1
+
+[comportamiento]
+
+
+
+[felicitaciones]
+
+¡Qué buen alijo tienes ahí! :)

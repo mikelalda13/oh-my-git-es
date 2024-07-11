@@ -1,0 +1,43 @@
+título = Camino de ladrillos amarillos
+tarjetas = pago confirmar-restablecimiento automático-duro bisect-start bisect-bueno bisect-malo
+
+[descripción]
+
+(¡Aleje un poco el zoom con la rueda del mouse! :D)
+
+¡Oh, no! ¡Has perdido tu llave en algún momento del día!
+
+Claro, puedes mirar cada confirmación en un intento de encontrarla, pero hay una manera mejor: ¡tu máquina del tiempo tiene una forma incorporada de encontrar el momento en el que las cosas salieron mal rápidamente!
+
+Primero, juega la carta de "inicio en bisección". Luego, vaya a una confirmación donde no tenga la clave y juegue la carta "bisecta mala". Del mismo modo, vaya a un compromiso desde el principio donde tenga la llave *en su bolsillo* y juegue la carta "bisecta bien".
+
+Una vez que haya encontrado la última confirmación buena, restablezca la rama principal. ¿Qué pasó con la llave después de que la perdiste?
+
+[configuración]
+
+echo "Aún tienes tu llave". > tu
+
+para i en {1..30}; hacer
+    si prueba $i -eq 12; entonces
+        echo "Tu bolsillo está vacío." > tu
+        echo "Está en el suelo". > clave
+    fi
+    si prueba $i -eq 13; entonces
+        echo "Tiene una llave en el pico." > pájaro
+        llave rm
+    fi
+    si prueba $i -eq 14; entonces
+        pájaro rm
+    fi
+    git agregar.
+    git commit --allow-empty -m "$i"
+hecho
+
+[ganar]
+
+# Encuentra el último compromiso bueno
+prueba "$(git log --pretty=%s main | head -1)" -eq 11
+
+[felicitaciones]
+
+¡Bien hecho! :) El único problema es que ahora tienes que caminar todo el camino de regreso a casa, otra vez...

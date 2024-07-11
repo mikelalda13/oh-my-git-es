@@ -1,0 +1,86 @@
+título = Rebase
+tarjetas = pago compromiso-restablecimiento automático-rebase completa
+
+[descripción]
+
+Bien, resulta que ahorrar tiempo por la mañana utilizando universos paralelos va en contra de las regulaciones de la Asociación Internacional de Viajes en el Tiempo. Después de todo, tendrás que hacer tus tareas en secuencia.
+
+¿Ves la tarjeta de "rebase"? Cuando lo arrastras a una confirmación, copiará los eventos en tu línea de tiempo actual después del especificado. De esta manera, cree una línea de tiempo limpia y lineal en la que visite las tres tiendas.
+
+Nuevamente, queremos que esa sea nuestra realidad básica: ¡la rama "principal" debe apuntar a esa línea de tiempo!
+
+[configuración]
+
+echo "No tienes baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+
+git agregar.
+git commit -m "El comienzo"
+
+git checkout -b baguette principal
+echo "Tienes una baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Compras una baguette"
+
+echo "Te comiste una baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Te comes la baguette"
+
+git checkout -b café principal
+echo "No tienes baguette.
+
+Tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Compras un poco de café"
+
+echo "No tienes baguette.
+
+Bebiste café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Tú bebes el café"
+
+git checkout -b donut principal
+echo "No tienes baguette.
+
+No tienes café.
+
+Tienes un donut." > tú
+git agregar.
+git commit -m "Compras una dona"
+
+echo "No tienes baguette.
+
+No tienes café.
+
+Te comiste un donut." > tú
+git agregar.
+git commit -m "Te comes el donut"
+
+git checkout --separar principal
+
+
+[ganar]
+
+# Ordena todas las ramas de los árboles en una y mueve la rama principal ref.
+{ git show principal:tú | grep "Comiste.*baguette"; } && { git show main:tú | grep "Bebiste.*café"; } && { git show main:tú | grep "Comiste.*dona"; } && { prueba "$(git log main --oneline | wc -l)" -eq 7; }
+
+[felicitaciones]
+
+Observe cómo las otras líneas de tiempo y confirmaciones todavía están allí; si algo sale mal, también puede regresar a ellas.
+
+Es realmente difícil *destruir* cosas con tu máquina del tiempo.

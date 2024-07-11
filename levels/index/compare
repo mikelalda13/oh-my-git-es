@@ -1,0 +1,51 @@
+título = Paso a paso
+tarjetas = pago confirmar-auto
+
+[descripción]
+
+¡Bienvenidos a la lección de hoy! ¡Aprenderemos a realizar confirmaciones con más precisión!
+
+Eche un vistazo a estas dos líneas de tiempo. Tienen exactamente el mismo resultado. Pero uno de ellos hace que sea mucho más fácil descubrir qué pasó.
+
+[ganar]
+
+# ¡Bien! ¡Tener cada cambio en su propio compromiso hace que sea más fácil entender lo que está pasando! ¡Aprendamos cómo hacer eso!
+rama git --show-current | grep paso a paso
+
+[configuración]
+
+echo "Una bola de cristal pequeña pero pesada". > pelota
+echo "Un libro delgado, que está de pie". > libro
+echo "Una vela ardiendo con una llama azul". > vela
+echo "Un detector de humo. Es absolutamente silencioso." > detector_de_humo
+
+git agregar.
+git commit -m "El comienzo"
+
+rama git -M todo a la vez
+
+echo "La pelota ahora toca el libro". > pelota
+echo "El libro se ha caído." > libro
+echo "La vela se ha apagado". > vela
+
+git commit -am "El fin"
+
+git checkout CABEZA^
+
+git checkout -b paso a paso
+
+echo "La pelota ahora toca el libro". > pelota
+git commit -am "La pelota rueda hacia el libro"
+
+echo "El libro se ha caído." > libro
+git commit -am "El libro se cae"
+
+echo "La vela se ha apagado". > vela
+git commit -am "El libro apaga la vela"
+
+git pago CABEZA ~ 3
+
+[ganar]
+
+# ¡Elija la línea de tiempo que sea más clara y haga sonar la alarma!
+git muestra paso a paso: detector_de_humo | cola -n 1 | grep -v "absolutamente silencioso"

@@ -1,0 +1,27 @@
+[descripción]
+
+Hay un comando simple para eliminar todos los objetos a los que nada hace referencia:
+
+    git podar
+
+Elimine todos los blobs de este repositorio.
+
+[felicitaciones]
+
+Generalmente, `git prune` será útil si desea limpiar algunos objetos que creó.
+
+Alternativamente, también puedes hacer clic en el botón "Recargar" para reiniciar un nivel.
+
+[configuración]
+
+echo "Mi contraseña maestra es a1b2c3d4e5" | git hash-objeto -w --stdin
+echo "Esta mancha realmente no debería existir" | git hash-objeto -w --stdin
+echo "Esto es un virus" | git hash-objeto -w --stdin
+
+[objetivo de configuración]
+
+[ganar]
+
+OBJECT_COUNT=$(git cat-file --batch-check='%(nombre de objeto) %(tipo de objeto)' --batch-all-objects | wc -l)
+
+prueba "$OBJECT_COUNT" -eq 0

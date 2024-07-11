@@ -1,0 +1,42 @@
+[descripción]
+
+¡Echemos un vistazo a las "refs" (abreviatura de "referencias")! ¡Las referencias no son objetos, sino *punteros* muy simples a objetos! Pueden ayudarle a realizar un seguimiento de qué está y dónde.
+
+Puede crear o actualizar una referencia con
+
+    git update-ref refs/<nombre de referencia> <nuevo valor>
+
+¡Asegúrate de comenzar siempre el nombre de un árbitro con "refs/"! Esa es una convención que ayuda a Git a encontrar todas las referencias que creas. Si olvida "refs/", no verá la referencia.
+
+¡Crea referencias que apunten a todos los objetos en este repositorio!
+
+[configuración]
+
+eco hola > hola
+eco mundo > mundo
+BLOB1=$(git hash-object -w hola)
+BLOB2=$(git hash-object -w mundo)
+git agregar.
+ÁRBOL=$(git escribir-árbol)
+COMMIT=$(git commit-tree $TREE -m "Compromiso inicial")
+
+[objetivo de configuración]
+
+eco hola > hola
+eco mundo > mundo
+BLOB1=$(git hash-object -w hola)
+BLOB2=$(git hash-object -w mundo)
+git agregar.
+ÁRBOL=$(git escribir-árbol)
+COMMIT=$(git commit-tree $TREE -m "Compromiso inicial")
+
+git actualización-ref refs/a $BLOB1
+git actualización-ref refs/b $BLOB2
+git actualización-ref refs/c $ÁRBOL
+git actualización-ref refs/d $COMMIT
+
+[ganar]
+
+OBJETOS=$(git cat-file --batch-check='%(nombre de objeto)' --batch-all-objects | sort)
+REF_TARGETS=$(git show-ref -s | ordenar | uniq)
+prueba "$OBJECTS" = "$REF_TARGETS"

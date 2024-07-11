@@ -1,0 +1,58 @@
+título = Etiquetas remotas
+tarjetas = tirar empujar confirmar-pago automático
+
+[descripción]
+
+Cuando trabaja con repositorios remotos, las etiquetas no se insertan ni se extraen automáticamente.
+
+Puedes empujar una etiqueta con
+    git push <remoto> <nombre-etiqueta>
+O todas las etiquetas con:
+    git push <remoto> --etiquetas
+    
+La eliminación de etiquetas en su control remoto funciona con: 
+    git push <remoto> --delete <nombre-etiqueta>
+    
+También puedes sincronizar 
+    git fetch <remoto> --prune --prune-tags
+
+
+Agregue una etiqueta llamada "v2" a la última confirmación y envíela al control remoto. También coloque la etiqueta v1 en su repositorio local.
+[configura el tuyo]
+
+git pago principal
+
+git pago principal
+echo "compartir cepillo de dientes" > ideas-proyecto
+git agregar.
+git commit -m "Primera idea"
+
+echo "¿Está mi teléfono al revés? Aplicación" >> ideas de proyecto
+git commit -am "Otra idea"
+
+
+
+git push amigo principal
+
+git rama -u amigo/principal principal
+
+[amigo de configuración]
+
+
+
+[acciones amigo]
+
+etiqueta git v1 CABEZA ~ 1
+
+[ganar]
+# etiqueta v1 en tu repositorio
+test "$(git show v1 -s --format=%h)" = "$(git show HEAD~1 -s --format=%h)"
+
+# etiqueta v2 en tu repositorio
+prueba "$(git show v2 -s --format=%h)" = "$(git show HEAD -s --format=%h)"
+
+
+[gana amigo]
+
+# etiqueta v2 en el control remoto
+prueba "$(git show v2 -s --format=%h)" = "$(git show HEAD -s --format=%h)"

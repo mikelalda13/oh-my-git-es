@@ -1,0 +1,42 @@
+título = Vivir peligrosamente
+tarjetas =
+
+[descripción]
+
+¡Así que has decidido postularte a la escuela de viajes en el tiempo para aprender a usar esta máquina del tiempo llamada "Git"!
+
+¡Que interesante!
+
+¡Ya casi has terminado con el papeleo! Sólo necesitas completar una razón más por la que quieres aprender Git.
+
+[felicitaciones]
+
+De repente, tu gato salta sobre la mesa, le arrebata el formulario y sale corriendo. Oh, no. ¡Todo tu arduo trabajo, desaparecido!
+
+Claramente necesita una mejor solución.
+
+(¡Haga clic en "Siguiente nivel" tan pronto como esté listo!)
+
+[configuración]
+
+rm-rf.git
+
+echo "~ Por qué quiero aprender Git ~
+
+- Para poder deshacer errores
+- Para realizar un seguimiento de mis proyectos a lo largo del tiempo" >> form.txt
+
+[comportamiento]
+
+test "$(cat form.txt | wc -l )" -ge 5 && echo "(Ha sido robado por tu gato).
+
+
+
+
+
+" > formulario.txt
+
+[ganar]
+
+# ¡Agrega otra línea al formulario.txt!
+prueba "$(cat form.txt | wc -l )" -ge 5

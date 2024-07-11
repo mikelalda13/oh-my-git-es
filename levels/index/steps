@@ -1,0 +1,53 @@
+title = Agregar cambios paso a paso
+tarjetas = agregar confirmación de reinicio de archivo
+
+[descripción]
+
+¡El índice es realmente útil porque nos permite ser precisos sobre qué cambios queremos incluir en cada confirmación!
+
+[configuración]
+
+echo "Un martillo, balanceándose sobre su mango". > martillo
+echo "Una botella que contiene un líquido transparente". > botella
+echo "Un terrón de azúcar blanco". > cubo_de_azúcar
+
+git agregar.
+git commit -m "El comienzo"
+
+[ganar]
+
+# ¡Realice cambios en los tres objetos para formar una secuencia lógica de eventos!
+prueba "$(git diff --name-only | wc -l)" -eq 3 || archivo -f .git/vela-cambiada && toque .git/vela-cambiada
+
+# ¡Agregue solo uno de estos cambios!
+prueba "$(git diff --cached --name-only | wc -l)" -eq 1 || archivo -f .git/vela-añadida && toque .git/vela-añadida
+
+# Y haz un compromiso.
+CONTAR=0
+para confirmar en $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch-all-objects | grep 'commit$' | cut -f1 -d''); hacer
+    si prueba "$(git diff --name-only $commit $commit^ | wc -l)" -eq 1; entonces
+        CONTAR=$((CONTAR+1))
+    fi
+hecho
+
+prueba "$COUNT" -ge 1
+
+# Realizar una segunda confirmación que solo registre un único cambio.
+CONTAR=0
+para confirmar en $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch-all-objects | grep 'commit$' | cut -f1 -d''); hacer
+    si prueba "$(git diff --name-only $commit $commit^ | wc -l)" -eq 1; entonces
+        CONTAR=$((CONTAR+1))
+    fi
+hecho
+
+prueba "$COUNT" -ge 2
+
+# Y un tercero.
+CONTAR=0
+para confirmar en $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch-all-objects | grep 'commit$' | cut -f1 -d''); hacer
+    si prueba "$(git diff --name-only $commit $commit^ | wc -l)" -eq 1; entonces
+        CONTAR=$((CONTAR+1))
+    fi
+hecho
+
+prueba "$COUNT" -ge 3

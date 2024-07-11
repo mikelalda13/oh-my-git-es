@@ -1,0 +1,33 @@
+[descripción]
+
+En lugar de eliminar una entrada del índice y agregar una con el mismo nombre, ¡también puedes actualizar esa entrada directamente!
+
+Coloque el contenido que desee en un archivo con un nombre coincidente y luego ejecute
+
+    git update-index <archivo>
+
+Esto creará un nuevo blob y actualizará el hash de la entrada de ese blob.
+
+¡Actualiza una entrada en el índice!
+
+[configuración]
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+eco "archivo 3" > archivo3
+git agregar.
+
+[objetivo de configuración]
+
+eco "archivo 1" > archivo1
+eco "archivo 2" > archivo2
+eco "archivo 3" > archivo3
+git agregar.
+
+echo "nuevo contenido" > archivo1
+archivo de índice de actualización de git1
+
+[ganar]
+
+# Esta no es realmente una buena prueba para determinar la condición ganadora...
+test "$(git ls-files -s | git hash-object --stdin)" != "10c4b28623e7e44e09f5a596450a50ab7ac31fbe" -a "$(git ls-files | wc -l)" -eq 3

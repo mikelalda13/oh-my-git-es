@@ -1,0 +1,26 @@
+title = ¡Dividir un compromiso!
+tarjetas = pago confirmar reinicio-restablecimiento completo agregar rebase-interactivo rebase-continuar mostrar
+
+[descripción]
+
+¡Aquí, ambos cambios ocurrieron en una sola confirmación! En su lugar, divídalos para que estén en dos confirmaciones.
+
+[configuración]
+
+hacer eco de algo > archivo1
+hacer eco de algo más > archivo2
+git agregar.
+git commit -m "Compromiso inicial"
+
+echo esto debería suceder primero >> archivo1
+echo y esto debería suceder después de eso >> archivo2
+git commit -am "Ambos juntos"
+
+echo este es algún otro cambio >> archivo1
+echo este es algún otro cambio >> archivo2
+git commit -am "Algo más"
+
+[ganar]
+
+prueba "$(git diff-tree --no-commit-id --name-status -r main^)" = "M archivo2" &&
+prueba "$(git diff-tree --no-commit-id --name-status -r main~2)" = "M archivo1"

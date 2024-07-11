@@ -1,0 +1,23 @@
+title = Entra en la máquina del tiempo
+tarjetas = inicio
+
+[descripción]
+
+¡Has sido aceptado en la escuela de viajes en el tiempo! ¡Hurra! ¡Es tu primer día! Tu profesor explica:
+
+"¡Para hacer cualquier cosa con una máquina del tiempo, primero debes inicializarla!"
+
+¡Arrastra esa carta azul hacia arriba para jugarla!
+
+[configuración]
+
+rm-rf.git
+
+[ganar]
+
+# ¡Inicializa la máquina del tiempo!
+prueba -d .git
+
+[felicitaciones]
+
+¡Lindo! ¿Ves esa pequeña ardilla búho que apareció? ¡Será tu compañero y siempre te mostrará dónde estás en el tiempo!

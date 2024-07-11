@@ -1,0 +1,26 @@
+title = ¡Haz un compromiso, pero más rápido!
+tarjetas = agregar restablecer pago confirmar compromiso-a
+
+[descripción]
+
+Hay un truco para ahorrar tiempo, donde en lugar de un simple `git commit`, puedes usar
+
+    git confirmar -a
+
+¡Esto agregará automáticamente todos los cambios que realizó en los archivos locales! Muy conveniente.
+
+[configuración]
+
+eco a > a
+eco b > b
+eco c > c
+git agregar.
+git commit -m "Compromiso inicial"
+eco x > a
+eco x > b
+eco x > c
+
+[ganar]
+
+# Realizar una confirmación donde todos los archivos contengan "x".
+prueba "$(git show main:a)" = x && prueba "$(git show main:b)" = x && prueba "$(git show main:c)" = x

@@ -1,0 +1,32 @@
+título = Diseño de interiores
+tarjetas = archivo-nuevo archivo-eliminar
+
+[descripción]
+
+Ahora que tu habitación luce ordenada, puedes comenzar a desempacar tus cosas. Trajiste dos muebles nuevos y con una sonrisa brillante,
+¡Ya ves que sus colores combinan con el color de tu cama!
+
+Construye tus dos muebles jugando la carta táctil.
+Luego, ponle un nombre a tus muebles; puedes elegir el que quieras.
+
+¡Asegúrate de que los colores combinen! Puedes encontrar el color de la cama en su descripción.
+¡No olvides agregar también un color y una descripción a tus nuevos muebles!
+
+[configuración]
+
+echo Una acogedora cama amarilla. > cama
+
+[ganar]
+
+# Agrega dos muebles más
+NUM_FILES="$(ls | baño -l)"
+prueba "$NUM_FILES" -ge 3
+
+# Asegúrese de que los colores coincidan con el color de su cama.
+NUM_FILES="$(ls | baño -l)"
+YELLOW_FILES="$(grep -li amarillo * | wc -l)"
+prueba "$NUM_FILES" -ge 2 && prueba "$YELLOW_FILES" = "$NUM_FILES"
+
+[felicitaciones]
+
+¿No te sientes inmediatamente más como en casa?

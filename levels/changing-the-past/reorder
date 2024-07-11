@@ -1,0 +1,78 @@
+título = Reordenar eventos
+tarjetas = pago compromiso-restablecimiento automático-rebase duro-selección interactiva
+
+[descripción]
+
+Ups, parece que hay algo mal aquí. ¿Puedes volver a poner los eventos en el orden correcto?
+
+Hay dos formas de hacer esto: puede arrastrar la tarjeta "rebase interactiva" a la confirmación antes de la que desea cambiar, luego reordenar las líneas en el archivo que se abre y guardarlo.
+
+O puede restablecer la etiqueta principal a la primera confirmación y luego seleccionar confirmaciones individuales en el orden que desee. ¡Tienes cartas para ambos enfoques!
+
+[configuración]
+
+echo "Acabas de despertar.
+
+NO estás usando ropa interior.
+
+NO llevas pantalones.
+
+NO llevas camisa.
+
+NO estás usando zapatos." > tú
+git agregar.
+
+git commit -m "El comienzo"
+
+echo "Acabas de despertar.
+
+NO estás usando ropa interior.
+
+NO llevas pantalones.
+
+NO llevas camisa.
+
+Estás usando zapatos." > tú
+git commit -am "Ponte los zapatos"
+
+echo "Acabas de despertar.
+
+NO estás usando ropa interior.
+
+Estás usando pantalones.
+
+NO llevas camisa.
+
+Estás usando zapatos." > tú
+git commit -am "Ponte los pantalones"
+
+echo "Acabas de despertar.
+
+Estás usando ropa interior.
+
+Estás usando pantalones.
+
+NO llevas camisa.
+
+Estás usando zapatos." > tú
+git commit -am "Ponte ropa interior"
+
+echo "Acabas de despertar.
+
+Estás usando ropa interior.
+
+Estás usando pantalones.
+
+Estás usando una camisa.
+
+Estás usando zapatos." > tú
+git commit -am "Ponte la camisa"
+
+[ganar]
+
+# Reordena los commits para vestirte de la forma correcta
+{ git log principal --oneline | perl -0777 -ne'exit(1) si no /zapatos[\s\S]*pantalones[\s\S]*ropa interior/'; } && { prueba "$(git log main --oneline | wc -l)" -eq 5; }
+
+[felicitaciones]
+
+¡Siéntete libre de restablecer el nivel y probar la otra estrategia! ¿Cuál te gusta más?

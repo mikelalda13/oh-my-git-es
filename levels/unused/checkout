@@ -1,0 +1,31 @@
+title = Obteniendo la última versión
+tarjetas = archivo de pago
+
+[descripción]
+
+Has estado trabajando en tu ensayo por un tiempo. Pero... ¡uf! Ahora tu gato camina sobre tu teclado y "te ayuda", ¡así que ahora todo está arruinado! :/
+
+¡Pero Git está aquí para ayudar! Para descartar todos los cambios que hizo su gato y volver a la versión en la última confirmación, use `checkout`.
+
+[configuración]
+
+eco "A" >> ensayo.txt
+git agregar.
+git commit -m "Compromiso inicial"
+
+eco "B" >> ensayo.txt
+git commit -a -m "Versión mejorada"
+
+eco "C" >> ensayo.txt
+git commit -a -m "Versión aún mejor"
+
+eco "D" >> ensayo.txt
+git commit -a -m "Versión maravillosa"
+
+eco "blarg
+blaaaargh" > ensayo.txt
+
+[ganar]
+
+# Restaurar la versión de la última confirmación.
+ensayo de gato.txt | grupo D

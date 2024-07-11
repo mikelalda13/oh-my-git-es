@@ -1,0 +1,49 @@
+title = ¡Las ramas crecen contigo!
+tarjetas = pago confirmar-auto rama-eliminar rama restablecer-hard
+
+[descripción]
+
+Tenga en cuenta que hay dos opciones para "viajar hasta el final de una línea de tiempo":
+
+Primero, puede viajar directamente al compromiso, como lo hemos hecho antes.
+
+Y en segundo lugar, puedes viajar hasta la etiqueta de la sucursal. En este caso, cuando hagas una nueva confirmación, la rama crecerá contigo y seguirá apuntando al final de la línea de tiempo.
+
+[cli]
+
+Para viajar a una sucursal, escriba `git checkout nombre_de_la_sucursal`.
+
+Y para viajar a la última confirmación, escriba `git checkout --detach name_of_the_branch`.
+
+[configuración]
+
+echo "Envuelves el regalo de cumpleaños y tomas tu entrada para el concierto". > tu
+git agregar.
+git commit -m "Preparativos de la tarde"
+echo "¡Vas a la fiesta de cumpleaños!" >> tu
+git agregar.
+git commit -m "Ir al cumpleaños"
+cumpleaños de la rama git
+
+git pago CABEZA~1
+echo "¡Vas al concierto!" > tu
+git agregar.
+git commit -m "Ir al concierto"
+concierto de la rama git
+
+git pago CABEZA~1
+
+rama git -D principal
+
+[ganar]
+
+# Viaja directamente al último compromiso amarillo de la línea de tiempo del cumpleaños, haz un cambio a "tú" y realiza un compromiso
+para confirmar en $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch-all-objects | grep 'commit$' | cut -f1 -d''); hacer
+    si prueba $(git rev-parse $commit^) = $(git rev-parse cumpleaños); entonces
+        regresar 0
+    fi
+hecho
+regresar 1
+
+# Viaja a la rama azul 'concierto', haz un cambio en 'tú' y confirma.
+concierto de espectáculo de git ^ | grep "Ir al concierto"

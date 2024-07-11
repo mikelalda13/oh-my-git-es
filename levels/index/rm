@@ -1,0 +1,24 @@
+title = Eliminar un archivo en la próxima confirmación
+cards = agregar restablecer-archivo-archivo-de-compra-rm archivo-eliminar confirmación
+
+[descripción]
+
+Si desea eliminar un archivo en la próxima confirmación, ¡puede usar `git rm`! Esto eliminará el archivo localmente y en el índice.
+
+Si se modifica un archivo, primero deberá restablecer estos cambios/restablecer los archivos.
+
+[configuración]
+
+eco a > a
+eco x > b
+eco x > c
+git agregar.
+git commit -m "Compromiso inicial"
+eco x > a
+eco b > b
+git agregar b
+
+[ganar]
+
+# Realizar una confirmación donde se eliminan todos los archivos Â¯\_(^_^)_/Â¯
+prueba "$(git ls-tree main | wc -l)" -eq 0

@@ -1,0 +1,27 @@
+título = Hacer una confirmación \o/
+tarjetas = agregar restablecer compromiso de pago
+
+[descripción]
+
+Para practicar, haga una confirmación donde todos los archivos contengan una "x".
+
+[configuración]
+
+eco a > a
+eco x > b
+eco x > c
+git agregar.
+git commit -m "Compromiso inicial"
+eco x > a
+eco b > b
+git agregar b
+eco c > c
+
+[ganar]
+
+# El archivo a contiene "x" en la última confirmación principal.
+prueba "$(git show main:a)" = x
+# El archivo b contiene "x" en la última confirmación principal.
+prueba "$(git show main:b)" = x
+# El archivo c contiene "x" en la última confirmación principal.
+prueba "$(git show main:c)" = x

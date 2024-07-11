@@ -1,0 +1,38 @@
+title = Actualizando archivos en el índice
+tarjetas = agregar confirmación de pago
+
+[descripción]
+
+¡Así que comienza a trabajar y realiza cambios en tus archivos! Git te permite elegir cuál de estos cambios deseas realizar en la siguiente confirmación. Esto es como actualizar la versión de índice de ese archivo a la nueva versión.
+
+¡Esto le permite tener confirmaciones más pequeñas que describen mejor lo que cambió!
+
+El comando para esto es el mismo: ¡`git add`!
+
+[configuración]
+
+eco a > a
+eco b > b
+eco c > c
+git agregar.
+git commit -m "Compromiso inicial"
+
+[ganar]
+
+# ¡Haz cambios en todos los archivos!
+prueba "$(cat a)" != "a" &&
+prueba "$(cat b)" != "b" &&
+prueba "$(cat c)" != "c"
+
+# ¡Agregue solo los cambios de a y c, y haga una confirmación! Finalmente, haga una confirmación que capture los cambios en b!
+
+prueba "$(git show main:a)" != "a" &&
+prueba "$(git show main:b)" != "b" &&
+prueba "$(git show main:c)" != "c" &&
+prueba "$(git show main^:a)" != "a" &&
+prueba "$(git show main^:b)" == "b" &&
+prueba "$(git show main^:c)" != "c"
+
+[felicitaciones]
+
+¡Bien hecho! Intente viajar entre las confirmaciones usando `git checkout`, ¡para que pueda ver su contenido nuevamente!

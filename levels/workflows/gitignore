@@ -1,0 +1,18 @@
+título = Ignorar archivos
+
+[descripción]
+
+Ese pollo corre mucho y cambia con frecuencia. No queremos tenerlo en nuestras confirmaciones.
+
+¡Agréguelo al archivo .gitignore e intente usar `git add.`!
+
+[configuración]
+
+toque .gitignore
+eco importante > importante
+git agregar importante
+git commit -m "Compromiso inicial"
+
+[comportamiento]
+
+echo "$RANDOM" > pollo

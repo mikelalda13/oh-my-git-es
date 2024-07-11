@@ -1,0 +1,23 @@
+título = Un paso tras otro
+tarjetas = pago confirmar reinicio-adición completa
+
+[descripción]
+
+A veces, es posible que desees registrar el orden en el que cambiaron las cosas, en lugar de realizar una única confirmación.
+
+¿Que pasó aquí? Realice dos confirmaciones de los cambios (usando la tarjeta "agregar"), en un orden que tenga sentido.
+
+[configuración]
+
+hacer eco de algo > archivo1
+hacer eco de algo más > archivo2
+git agregar.
+git commit -m "Compromiso inicial"
+
+echo esto debería suceder primero >> archivo1
+echo y esto debería suceder después de eso >> archivo2
+
+[ganar]
+
+prueba "$(git diff-tree --no-commit-id --name-status -r main)" = "M archivo2" &&
+prueba "$(git diff-tree --no-commit-id --name-status -r main^)" = "M archivo1"

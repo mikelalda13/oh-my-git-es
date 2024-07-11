@@ -1,0 +1,89 @@
+title = Moviendo ramas alrededor
+tarjetas = pago confirmar-fusión automática restablecer-hard
+
+[descripción]
+
+¡Uno de tus colegas se equivocó aquí y colocó las ramas en los plazos equivocados!
+
+Puede eliminar y volver a crear estas ramas, pero también puede moverlas directamente a diferentes confirmaciones mediante el uso
+
+    git pago
+
+en los nombres de las ramas, y luego usando
+
+    reinicio de git --duro
+
+en el compromiso donde desea que esté la rama.
+
+La rama de donas está en el lugar correcto, pero la línea de tiempo aún está incompleta. ¡Haz que *te comas* la dona en esa rama!
+
+[configuración]
+
+echo "No tienes baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+
+git agregar.
+git commit -m "El comienzo"
+
+git pago -b café
+echo "Tienes una baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Compras una baguette"
+
+echo "Te comiste una baguette.
+
+No tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Te comes la baguette"
+
+git checkout -b baguette principal
+echo "No tienes baguette.
+
+Tienes café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Compras un poco de café"
+
+echo "No tienes baguette.
+
+Bebiste café.
+
+No tienes donut." > tu
+git agregar.
+git commit -m "Tú bebes el café"
+
+git checkout -b donut principal
+echo "No tienes baguette.
+
+No tienes café.
+
+Tienes un donut." > tú
+git agregar.
+git commit -m "Compras una dona"
+
+git checkout --separar principal
+
+[ganar]
+
+# ¿Te comiste una baguette en la rama de baguette?
+git show baguette:tú | grep "Comiste.*baguette"
+
+# ¿Tomaste un café en la rama del café?
+git show café:tú | grep "Bebiste.*café"
+
+# ¿Te comiste una rosquilla en la rama de rosquilla?
+git show donut:tú | grep "Comiste.*dona"
+
+[comportamiento]
+
+test "$(git rev-parse HEAD^)" = "$(git rev-parse donut)" && sugerencia "Recuerda revisar la etiqueta de rama azul cuando quieras que crezca con la línea de tiempo".

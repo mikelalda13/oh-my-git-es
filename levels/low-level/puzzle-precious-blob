@@ -1,0 +1,28 @@
+[descripción]
+
+¡Crea dos árboles que apunten al mismo blob!
+
+[configuración]
+
+[objetivo de configuración]
+
+BLOB=$(echo "Soy precioso" | git hash-object -w --stdin)
+git update-index --add --cacheinfo 100644,$BLOB,a
+árbol de escritura de git
+git update-index --forzar-eliminar un
+índice de actualización de git --add --cacheinfo 100644,$BLOB,b
+árbol de escritura de git
+índice de actualización de git --force-remove b
+
+[ganar]
+
+ÁRBOLES=$(git cat-file --batch-check='%(nombre de objeto) %(tipo de objeto)' --batch-all-objects | árbol grep | cut -f1 -d" ")
+
+ALL_TREE_CHILDREN=$(para ÁRBOL en $ÁRBOLES; hacer
+    git cat-file -p $ÁRBOL | cortar -f1 | cortar -f3 -d" "
+hecho)
+
+NUMBER_OF_CHILDREN=$(echo "$ALL_TREE_CHILDREN" | wc -l)
+UNIQUE_CHILDREN=$(echo "$ALL_TREE_CHILDREN" | ordenar -u | wc -l)
+
+prueba "$NUMBER_OF_CHILDREN" -gt "$UNIQUE_CHILDREN"

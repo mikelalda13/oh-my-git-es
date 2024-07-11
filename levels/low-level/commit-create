@@ -1,0 +1,37 @@
+[descripción]
+
+Entonces, un árbol describe una estructura de directorios en un momento específico.
+
+Sería bueno si pudiéramos recordar cuándo existió ese estado y quién fue su autor, ¿verdad?
+
+Ingrese: confirma. Son objetos que apuntan a un árbol y contienen algunos metadatos adicionales. Puedes crear una confirmación usando
+
+    git commit-tree <árbol> -m "Descripción de tu compromiso"
+
+¡Haz un compromiso desde el árbol de este repositorio!
+
+[configuración]
+
+toque archivo_vacío
+git agregar.
+árbol de escritura de git
+
+rm archivo_vacío
+git update-index --eliminar archivo_vacío
+
+[objetivo de configuración]
+
+toque archivo_vacío
+git agregar.
+árbol de escritura de git
+
+rm archivo_vacío
+git update-index --eliminar archivo_vacío
+
+git commit-tree 3185 -m 'Mensaje de confirmación inteligente'
+
+[ganar]
+
+COMMIT_COUNT=$(git cat-file --batch-check='%(nombre de objeto) %(tipo de objeto)' --batch-all-objects | grep commit | wc -l)
+
+prueba "$COMMIT_COUNT" -gt 0

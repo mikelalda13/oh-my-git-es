@@ -1,0 +1,53 @@
+título = Creando etiquetas
+tarjetas = pago confirmar-fusión automática restablecer-hard
+
+[descripción]
+
+Algunas de sus confirmaciones pueden ser confirmaciones especiales. Quizás haya alcanzado un hito o un nuevo número de versión.
+
+Puede marcar estas confirmaciones con una bandera especial llamada "etiqueta".
+
+Escribir 
+
+    etiqueta git <nombre-etiqueta> 
+    
+para etiquetar su compromiso.
+
+---
+tipp1
+---
+tipp2
+---
+tipp3
+
+[configuración]
+
+echo "evento 1" > lista de características
+
+git agregar.
+git commit -m "Agregar característica 1"
+
+echo "evento 2" >> lista de características
+
+git agregar.
+git commit -m "Agregar característica 2"
+
+echo "evento 3" >> lista de características
+
+git agregar.
+git commit -m "Agregar característica 3"
+
+git checkout --separar principal
+
+[ganar]
+
+# ¿Creaste una nueva etiqueta?
+prueba "$(etiqueta git -l | wc -l)" -ge 1
+
+[comportamiento]
+
+
+
+[felicitaciones]
+
+¡Lindo! Etiquetaste tu primer compromiso :)

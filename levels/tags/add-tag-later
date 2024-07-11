@@ -1,0 +1,50 @@
+título = Etiquetar más tarde
+tarjetas = pago confirmar-fusión automática restablecer-hard
+
+[descripción]
+
+Pero, ¿qué sucede si olvidaste etiquetar tu compromiso actual?
+¡No hay problema! También puedes etiquetar confirmaciones más antiguas a través de
+
+    git tag <nombre-etiqueta> <hash-compromiso>
+    
+¡Etiquete la confirmación "Agregar función 2" con el nombre "v1"!
+
+---
+tipp1
+---
+tipp2
+---
+tipp3
+
+[configuración]
+
+echo "evento 1" > lista de características
+
+git agregar.
+git commit -m "Agregar característica 1"
+
+echo "evento 2" >> lista de características
+
+git agregar.
+git commit -m "Agregar característica 2"
+
+echo "evento 3" >> lista de características
+
+git agregar.
+git commit -m "Agregar característica 3"
+
+git checkout --separar principal
+
+[ganar]
+
+# ¿Creaste una nueva etiqueta?
+test "$(git show v1 -s --format=%h)" = "$(git show HEAD~1 -s --format=%h)"
+
+[comportamiento]
+
+
+
+[felicitaciones]
+
+Bien hecho :)

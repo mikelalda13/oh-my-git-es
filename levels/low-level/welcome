@@ -1,0 +1,33 @@
+[descripción]
+
+Este es el prototipo n.° 1 para el juego de aprendizaje Git de @bleeptrack y @blinry. Gracias por echarle un vistazo! <3
+
+¡Puedes interactuar con el repositorio etiquetado como "tuyo" escribiendo comandos Bash en la terminal a continuación! La visualización le mostrará su estado interno.
+
+Comencemos inicializando un repositorio Git vacío en el directorio actual escribiendo:
+
+    inicio de git
+
+[felicitaciones]
+
+¡Bien hecho!
+
+Un repositorio Git vacío está... bueno, bastante vacío. Lo único que siempre existe es una referencia llamada "HEAD". ¡Aprenderemos qué es más adelante!
+
+Pero primero, ¡veamos algunos conceptos básicos!
+
+(¡Haga clic en "Siguiente nivel" tan pronto como esté listo!)
+
+[configuración]
+
+rm-rf.git
+
+[objetivo de configuración]
+
+rm-rf.git
+
+inicio de git
+
+[ganar]
+
+prueba -d .git

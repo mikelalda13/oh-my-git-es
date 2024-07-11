@@ -1,0 +1,14 @@
+título = ¡Bienvenido!
+tarjetas = inicio
+
+[descripción]
+
+
+[configuración]
+
+rm-rf.git
+
+[ganar]
+
+# ¡Nuevamente, inicializa tu máquina del tiempo!
+prueba -d .git

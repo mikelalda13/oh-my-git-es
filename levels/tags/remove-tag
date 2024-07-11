@@ -1,0 +1,53 @@
+título = Eliminando etiquetas
+tarjetas = pago confirmar-fusión automática restablecer-hard
+
+[descripción]
+
+¿Agregaste demasiadas etiquetas? ¡No hay problema! eliminarlos con
+
+    git tag -d <nombre-etiqueta>
+    
+¡Elimine todas las etiquetas de este repositorio!
+
+---
+tipp1
+---
+tipp2
+---
+tipp3
+
+[configuración]
+
+echo "evento 1" > lista de características
+
+git agregar.
+git commit -m "Agregar característica 1"
+
+echo "evento 2" >> lista de características
+
+git agregar.
+git commit -m "Agregar característica 2"
+
+echo "evento 3" >> lista de características
+
+git agregar.
+git commit -m "Agregar característica 3"
+
+etiqueta git v1 CABEZA ~ 2
+etiqueta git v2 CABEZA ~ 1
+etiqueta git v3 
+
+git checkout --separar principal
+
+[ganar]
+
+# ¿Eliminaste todas las etiquetas?
+prueba "$(etiqueta git -l | wc -l)" -eq 0
+
+[comportamiento]
+
+
+
+[felicitaciones]
+
+Bien hecho :)

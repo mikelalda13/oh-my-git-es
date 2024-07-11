@@ -1,0 +1,37 @@
+title = Restablecer archivos en el índice
+tarjetas = agregar confirmación de reinicio de archivo
+
+[descripción]
+
+¿Ves la sombra oscura detrás de los íconos? ¡Esa es la versión del archivo en la última confirmación!
+
+Por ejemplo, estas velas se han apagado y se ha añadido ese cambio.
+
+¡Pero decides que esto fue un error! ¡Solo quieres apagar la vela roja en el próximo compromiso!
+
+Si ya actualizó el índice a un archivo modificado, pero desea restablecerlo, puede usar `git reset`.
+
+[configuración]
+
+echo "¡Está ardiendo!" > vela_roja
+echo "¡Está ardiendo!" > vela_verde
+echo "¡Está ardiendo!" > vela_azul
+git agregar.
+git commit -m "El comienzo"
+
+echo "Se ha apagado". > vela_roja
+echo "Se ha apagado". > vela_verde
+echo "Se ha apagado". > vela_azul
+git agregar.
+
+[ganar]
+
+# ¡Restablece los cambios en las velas verdes y azules!
+espectáculo de git: green_candle | grep quemando &&
+espectáculo de git: blue_candle | grep quemando &&
+espectáculo de git: red_candle | grep -v quemando
+
+# ¡Y haz un compromiso!
+git show principal:green_candle | grep quemando &&
+git show principal:blue_candle | grep quemando &&
+git show principal:red_candle | grep -v quemando

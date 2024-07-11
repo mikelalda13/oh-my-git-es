@@ -1,0 +1,23 @@
+título = ¡Encantado de conocerte!
+tarjetas = nombre de configuración correo electrónico de configuración
+
+[descripción]
+
+Preséntate usando
+
+    git config --global usuario.nombre Nombre
+    git config --global usuario.email "tu@correo.com"
+
+[configuración]
+
+[comportamiento]
+
+test "$(git config user.name)" != "Tú" && sugerencia "Hola $(git config user.name), ¡encantado de conocerte!"
+
+[ganar]
+
+# Tener un nombre configurado.
+prueba "$(git config user.name)" != "Tú"
+
+# Tener una dirección de correo electrónico configurada.
+prueba "$(git config usuario.correo electrónico)" != "tú@time.agency"

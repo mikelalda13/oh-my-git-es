@@ -1,0 +1,47 @@
+título = Eliminando ramas
+tarjetas = pago confirmar-restablecimiento automático-eliminación completa de rama
+
+[descripción]
+
+La vida está llena de peligros, ¿verdad? ¡Incluso cuando caminas hacia la escuela, parece que hay muchos riesgos!
+
+Este lunes es especialmente malo. Llegaste a la escuela, pero hay algunas líneas de tiempo que definitivamente no quieres mantener.
+
+[configuración]
+
+echo Sales de tu casa y empiezas a caminar hacia la escuela. > tu
+git agregar.
+git commit -m "¡Buenos días!"
+
+echo Caminas por el lado derecho de la calle. >> tu
+git commit -am "Lado derecho"
+
+echo Saltas sobre una alcantarilla en la pasarela y llegas a la escuela a tiempo. >> tu
+git commit -am "Saltar"
+
+git checkout HEAD^ -b amigo
+echo De repente, te caes, te sumerges en agua apestosa y eres devorado por un caimán. >> tu
+git commit -am "Un nuevo amigo"
+
+git checkout HEAD~2 -b música
+echo Caminas por el lado izquierdo de la calle. >> tu
+git commit -am "Lado izquierdo"
+
+echo Como llegas un poco tarde, empiezas a correr. Alguien arroja un piano por la ventana y te destroza. >> tu
+git commit -am "Suena bien"
+
+git checkout HEAD^ -b helado
+echo No tienes prisa y camina despacio. Incluso conseguirás un helado en el camino. Llegas demasiado tarde a la escuela, tu profesor se enoja y te expulsan. >> tu
+git commit -am "Yum"
+
+rama git -M salto principal
+salto de pago de git ^^
+
+[ganar]
+
+# Encuentra las ramas defectuosas y elimínalas. Quédate sólo con el mejor.
+test "$(git show-ref --heads | cut -f2 -d' ')" = "$(echo refs/heads/leap)"
+
+[felicitaciones]
+
+Pensándolo bien, ¿tal vez incluso prefieras la línea de tiempo del helado a la principal? :)

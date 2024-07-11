@@ -1,0 +1,54 @@
+title = Cancelar una fusión
+tarjetas = pago confirmar-fusión automática fusión-abortar
+
+[descripción]
+
+A veces desea fusionar dos confirmaciones, pero se produce un conflicto de fusión que actualmente no desea resolver.
+
+En estas situaciones, puede cancelar la fusión para fusionarla más tarde. Usar
+    git fusionar --abortar
+cuando estás en un proceso de fusión.
+
+Intente fusionar ambas confirmaciones y luego cancele la fusión.
+
+[configuración]
+
+echo "Un nuevo día está comenzando" > tú
+
+git agregar.
+git commit -m "Inicio"
+
+echo "Caminando por el carril principal". >> tu
+
+git agregar.
+git commit -m "Carril principal"
+
+
+git pago CABEZA~1
+
+echo "Caminando por el carril lateral". >> tu
+
+git agregar.
+git commit -m "Carril lateral"
+
+git pago CABEZA~1
+
+rama git -D principal
+
+[comportamiento]
+
+si prueba -f .git/MERGE_HEAD; entonces
+    toque .git/secretfile
+fi
+
+[ganar]
+
+# ¿Intentaste fusionarte?
+prueba -f .git/archivosecreto
+
+# ¿Abortaste la fusión?
+prueba -f .git/secretfile &&! prueba -f .git/MERGE_HEAD &&! git rev-parse CABEZA^^
+
+[felicitaciones]
+
+Aaah, fusionémonos más tarde...

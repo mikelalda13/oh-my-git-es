@@ -1,0 +1,21 @@
+title = Restaurar un archivo del pasado
+tarjetas = pago pago-desde compromiso
+
+[descripción]
+
+Aquí hay un problema similar: ¡realmente te gustó el ensayo desde el primer compromiso y quieres recuperarlo! Bueno, el pago también puede restaurar cosas de confirmaciones anteriores. Aquí se explica cómo:
+
+    git checkout [compromiso] [archivo]
+
+[configuración]
+
+echo "buena versión" > ensayo
+git agregar.
+git commit -m "Compromiso inicial"
+echo "mala versión" > ensayo
+git commit -am "\"Mejorar\" ensayo"
+
+[ganar]
+
+# Obtenga la primera versión de su ensayo y haga un nuevo compromiso con él.
+test "$(git show main:essay)" = "buena versión"

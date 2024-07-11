@@ -1,0 +1,41 @@
+[descripción]
+
+Puede señalar referencias a una nueva ubicación usando el mismo comando que usa para crearlas:
+
+    git update-ref refs/<nombre de referencia> <objeto>
+
+Como ejercicio, ¡haga que todas las referencias en este repositorio apunten al objeto del árbol!
+
+[configuración]
+
+eco hola > hola
+eco mundo > mundo
+BLOB1=$(git hash-object -w hola)
+BLOB2=$(git hash-object -w mundo)
+git agregar.
+ÁRBOL=$(git escribir-árbol)
+COMMIT=$(git commit-tree $TREE -m "Compromiso inicial")
+
+git actualización-ref refs/a "$BLOB1"
+git update-ref refs/b "$COMMIT"
+
+[objetivo de configuración]
+
+eco hola > hola
+eco mundo > mundo
+BLOB1=$(git hash-object -w hola)
+BLOB2=$(git hash-object -w mundo)
+git agregar.
+ÁRBOL=$(git escribir-árbol)
+COMMIT=$(git commit-tree $TREE -m "Compromiso inicial")
+
+git actualización-ref refs/a "$BLOB1"
+git update-ref refs/b "$COMMIT"
+
+para REF en $(git for-each-ref --format='%(refname)'); hacer
+    git update-ref "$REF" "$ÁRBOL"
+hecho
+
+[ganar]
+
+prueba "$(git show-ref -s | sort -u)" = "c7863f72467ed8dd44f4b8ffdb8b57ca7d91dc9e"

@@ -1,0 +1,33 @@
+título = Problemas
+tarjetas = pagar agregar tirar empujar confirmar-fusión automática
+
+[descripción]
+
+¡Tanto tú como tu amigo habéis estado trabajando en el archivo y queréis sincronizarlo!
+
+[configura el tuyo]
+
+echo "¿El cobertizo para bicicletas debería ser ???" > archivo
+git agregar.
+git commit -m "inicial"
+
+git push -u amigo principal
+
+echo "El cobertizo para bicicletas debe ser verde" > archivo
+
+[amigo de configuración]
+
+git pago principal
+
+echo "El cobertizo para bicicletas debe ser azul" > archivo
+git commit -a -m "versión de amigos"
+
+[ganar]
+
+# Confirme sus cambios locales.
+prueba "$(git status -s)" = ""
+
+[gana amigo]
+
+# Mire la sugerencia de su amigo, haga un compromiso y retírelo.
+git rev-parse main^ && test "$(git rev-parse main^1^)" = "$(git rev-parse main^2^)"

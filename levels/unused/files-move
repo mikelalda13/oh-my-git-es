@@ -1,0 +1,27 @@
+título = No es necesario dormir
+tarjetas = archivo-nuevo archivo-eliminar archivo-cambiar nombre
+
+[descripción]
+
+En realidad, decides que no necesitas dormir.
+
+¡Por eso no necesitarás una cama y podrás construir otro mueble con madera!
+
+
+[configuración]
+
+echo Un armario amarillo con muchos cajones. > armario
+echo Un estante amarillo muy grande. > estante
+echo Una cómoda cama amarilla con cojines amarillos. > cama
+
+[ganar]
+
+# ¡Cambia el nombre de la cama por otro y dale una nueva descripción!
+NUM_FILES="$(ls | baño -l)"
+! prueba -f cama && prueba "$NUM_FILES" -ge 3 &&! grep -r "cama amarilla" .
+
+[felicitaciones]
+
+¡Limpio! ¡Incluso todavía parece un poco cómodo!
+
+¡Sales, ansioso por recibir tu primera lección en la escuela de viajes en el tiempo!
