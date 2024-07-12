@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  PROJECT_NAME: oh-my-git
+  PROJECT_NAME: oh-my-git-es
   GODOT_VERSION: 3.2.3
 
 jobs:
