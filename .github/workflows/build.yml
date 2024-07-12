@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  GODOT_VERSION: 3.5.2
+  GODOT_VERSION: 3.2.3
   EXPORT_NAME: oh-my-git-es
   PROJECT_PATH: oh-my-git-es
 
@@ -15,7 +15,7 @@ jobs:
     name: Windows Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.5.2
+      image: barichello/godot-ci:3.2.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.5.2
+      image: barichello/godot-ci:3.2.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,7 +65,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.5.2
+      image: barichello/godot-ci:3.2.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -98,7 +98,7 @@ jobs:
     name: Mac Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.5.2
+      image: barichello/godot-ci:3.2.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
